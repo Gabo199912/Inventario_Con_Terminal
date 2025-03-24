@@ -11,6 +11,7 @@ public class Main {
 
         //variables tipo String, salir del programa o elegir opciones
         String opcionesExistentesEnMenu;
+        String consumirLineaResidualBuffer;
 
 
         //arreglos donde se guardan los diferentes productos
@@ -65,7 +66,8 @@ public class Main {
                             System.out.println("***********************************************************************");
                             System.out.println("*        --ingresa tu producto                                        *");
                             System.out.print("*");
-                            risitoLista.add(entradaDeOpciones.next().toUpperCase());
+                            consumirLineaResidualBuffer = entradaDeOpciones.nextLine();
+                            risitoLista.add(entradaDeOpciones.nextLine().toUpperCase());
                             System.out.println("                                                                    *");
 
                             System.out.println("¿desea agregar otro producto?, SI para reingresar producto, NO para salir");
@@ -119,7 +121,8 @@ public class Main {
                             System.out.println("***********************************************************************");
                             System.out.println("*        --ingresa tu JUGO                                            *");
                             System.out.print("*");
-                            jugosLista.add(entradaDeOpciones.next().toUpperCase());
+                            consumirLineaResidualBuffer = entradaDeOpciones.nextLine();
+                            jugosLista.add(entradaDeOpciones.nextLine().toUpperCase());
                             System.out.println("                                                                    *");
 
                             System.out.println("¿desea agregar otro producto?, SI para reingresar producto, NO para salir");
@@ -173,7 +176,8 @@ public class Main {
                             System.out.println("***********************************************************************");
                             System.out.println("*        --ingresa tu BEBIDA GASEOSA                                  *");
                             System.out.print("*");
-                            bebidasLista.add(entradaDeOpciones.next().toUpperCase());
+                            consumirLineaResidualBuffer = entradaDeOpciones.nextLine();
+                            bebidasLista.add(entradaDeOpciones.nextLine().toUpperCase());
                             System.out.println("                                                                    *");
 
                             System.out.println("¿desea agregar otro producto?, SI para reingresar producto, NO para salir");
@@ -227,7 +231,8 @@ public class Main {
                             System.out.println("***********************************************************************");
                             System.out.println("*        --ingresa tu SOPA                                            *");
                             System.out.print("*");
-                            sopasLista.add(entradaDeOpciones.next().toUpperCase());
+                            consumirLineaResidualBuffer = entradaDeOpciones.nextLine();
+                            sopasLista.add(entradaDeOpciones.nextLine().toUpperCase());
                             System.out.println("                                                                    *");
 
                             System.out.println("¿desea agregar otro producto?, SI para reingresar producto, NO para salir");
@@ -276,9 +281,6 @@ public class Main {
                         }
 
 
-
-
-
                         break casos;
 
 
@@ -286,10 +288,52 @@ public class Main {
                         System.out.println("***********************************************************************");
                         System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
                         System.out.println("***********************************************************************");
+                        System.out.println();
 
+                        System.out.println("***********************************************************************");
+                        System.out.println("*-- Los risitos ingresados son: ");
                         for (String risitos : risitoLista) {
-                            System.out.println(risitos);
+                            System.out.println( "* " +risitos);
                         }
+
+                        System.out.println();
+                        System.out.println("***********************************************************************");
+                        System.out.println("*-- Los jugos ingresados son: ");
+                        for (String jugos: jugosLista){
+                            System.out.println("* " + jugos);
+                        }
+
+                        System.out.println();
+                        System.out.println("***********************************************************************");
+                        System.out.println("+-- las bebidas ingresadas son: ");
+                        for (String bebidas: bebidasLista){
+                            System.out.println("* " + bebidas);
+                        }
+
+
+                        System.out.println();
+                        System.out.println("***********************************************************************");
+                        System.out.println("*-- las sopas son: ");
+                        for (String sopas: sopasLista){
+                            System.out.println("* " + sopas);
+
+                        }
+
+                        System.out.println();
+                        System.out.println();
+                        System.out.println();
+
+                        System.out.println("***********************************************************************");
+                        System.out.println("*               puedes hacer lo siguiente                             *" +
+                                         "\n*                1. Ingresar risitos                                  *" +
+                                         "\n*                2. Ingresar jugos                                    *" +
+                                         "\n*                3. Ingresar bebidas gaseosas                         *" +
+                                         "\n*                4. Ingresar Sopas                                    *" +
+                                         "\n*                5. Para para regresar escriba: REGRESAR              *" +
+                                         "\n*                --INGRESE UNA DE LAS OPCIONES--                      *" +
+                                         "\n***********************************************************************");
+
+
 
                         opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
 
