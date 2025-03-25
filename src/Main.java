@@ -1,10 +1,6 @@
 
 
-import javax.management.openmbean.OpenMBeanConstructorInfo;
-import javax.xml.crypto.dom.DOMCryptoContext;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.IllegalFormatCodePointException;
 import java.util.Scanner;
 
 public class Main {
@@ -28,6 +24,7 @@ public class Main {
 
         //booleanos para identificar caracteres
         boolean verificaSiEsNumero;
+        boolean salirDeLosMenus;
 
 
         do {
@@ -52,7 +49,7 @@ public class Main {
                 switch (opcionesExistentesEnMenu) {
                     case "1":
 
-
+                        // ESTA PARTE ME PERMITE INGRESAR PRODUCTOS A LAS LISTAS
                             opcionesExistentesEnMenu = "SI";
                             while   (opcionesExistentesEnMenu.equals("SI")) {
 
@@ -270,7 +267,7 @@ public class Main {
                                             try {
                                                 Thread.sleep(2500);
                                             } catch (InterruptedException e) {
-                                                throw new RuntimeException(e);
+                                                System.out.println(e);
                                             }
 
                                             System.out.println("***********************************************************************");
@@ -307,7 +304,7 @@ public class Main {
 
                     case "2":
 
-
+                        // ESTA PARTE ME PERMITE MOSTRAR LO QUE TIENEN MIS LISTAS
                         opcionesExistentesEnMenu = "SI";
                         while   (opcionesExistentesEnMenu.equals("SI")) {
 
@@ -396,7 +393,7 @@ public class Main {
 
 
                     case "3":
-
+                        // ESETA PARTE ME PERMITE ACTUALIZAR LOS PRODUCTOS INGRESADOS
                         opcionesExistentesEnMenu = "SI";
                         while   (opcionesExistentesEnMenu.equals("SI")) {
                             System.out.println("***********************************************************************");
@@ -418,8 +415,8 @@ public class Main {
                                 switch (opcionesExistentesEnMenu){
                                     case "1":
 
-                                        opcionesExistentesEnMenu = "SI";
-                                        while (opcionesExistentesEnMenu.equals("SI")) {
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus) {
 
                                             System.out.println("***********************************************************************");
                                             System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
@@ -441,6 +438,9 @@ public class Main {
 
 
 
+
+
+                                            //sino ingresan un numero, repite hasta que sea numero
                                            while (!verificaSiEsNumero) {
 
                                                try {
@@ -494,9 +494,9 @@ public class Main {
 
 
                                             if (opcionesExistentesEnMenu.equals("SALIR")) {
-                                                opcionesExistentesEnMenu = "NO";
+                                                salirDeLosMenus = true;
                                             }else {
-                                                opcionesExistentesEnMenu = "SI";
+                                                salirDeLosMenus = false;
                                             }
 
                                         }
@@ -507,8 +507,8 @@ public class Main {
 
                                     case "2":
 
-                                        opcionesExistentesEnMenu = "SI";
-                                        while (opcionesExistentesEnMenu.equals("SI")) {
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus) {
 
                                             System.out.println("***********************************************************************");
                                             System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
@@ -582,9 +582,9 @@ public class Main {
 
 
                                             if (opcionesExistentesEnMenu.equals("SALIR")) {
-                                                opcionesExistentesEnMenu = "NO";
+                                                salirDeLosMenus = true;
                                             }else {
-                                                opcionesExistentesEnMenu = "SI";
+                                                salirDeLosMenus = false;
                                             }
 
                                         }
@@ -593,8 +593,8 @@ public class Main {
 
                                     case "3":
 
-                                        opcionesExistentesEnMenu = "SI";
-                                        while (opcionesExistentesEnMenu.equals("SI")) {
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus) {
 
                                             System.out.println("***********************************************************************");
                                             System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
@@ -668,9 +668,9 @@ public class Main {
 
 
                                             if (opcionesExistentesEnMenu.equals("SALIR")) {
-                                                opcionesExistentesEnMenu = "NO";
+                                                salirDeLosMenus = true;
                                             }else {
-                                                opcionesExistentesEnMenu = "SI";
+                                                salirDeLosMenus = false;
                                             }
 
                                         }
@@ -679,8 +679,8 @@ public class Main {
 
                                     case "4":
 
-                                        opcionesExistentesEnMenu = "SI";
-                                        while (opcionesExistentesEnMenu.equals("SI")) {
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus) {
 
                                             System.out.println("***********************************************************************");
                                             System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
@@ -754,9 +754,9 @@ public class Main {
 
 
                                             if (opcionesExistentesEnMenu.equals("SALIR")) {
-                                                opcionesExistentesEnMenu = "NO";
+                                                salirDeLosMenus = true;
                                             }else {
-                                                opcionesExistentesEnMenu = "SI";
+                                                salirDeLosMenus = false;
                                             }
 
                                         }
@@ -779,8 +779,426 @@ public class Main {
                         break casos;
 
                     case "4":
+                        // ESTA PARTE ME PERMITE ELIMINAR EL INDICE QUE QUIERA
+                        salirDeLosMenus = false;
+                        while (!salirDeLosMenus) {
+                            System.out.println("***********************************************************************");
+                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                            System.out.println("***********************************************************************");
+                            System.out.println("*               puedes hacer lo siguiente                             *" +
+                                             "\n*                1. Eliminar risitos                                  *" +
+                                             "\n*                2. Eliminar jugos                                    *" +
+                                             "\n*                3. Eliminar bebidas gaseosas                         *" +
+                                             "\n*                4. Eliminar Sopas                                    *" +
+                                             "\n*                5. Para para regresar escriba: REGRESAR              *" +
+                                             "\n*                --INGRESE UNA DE LAS OPCIONES--                      *" +
+                                             "\n***********************************************************************");
+                            System.out.println();
+                            System.out.print("*-- ");
+                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+                            eliminar:
+                                switch (opcionesExistentesEnMenu){
+                                    case "1":
+
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus){
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               INGRESA EL NUMERO DEL RISITO A ELIMINAR               *");
+                                            System.out.println();
 
 
+                                            numeroDeProductoParaActualizar = 0;
+                                            indiceDeProducto = 0;
+                                            verificaSiEsNumero = false;
+
+                                            for (String risito: risitoLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto + ". " + risito);
+                                            }
+
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            while (!verificaSiEsNumero){
+
+                                                try {
+                                                    numeroDeProductoParaActualizar = Integer.parseInt(opcionesExistentesEnMenu);
+                                                    verificaSiEsNumero = true;
+                                                }catch (NumberFormatException e){
+
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*-- INGRESE EL NUMERO DE SU PRODUCTO PARA ELIMINAR");
+                                                    System.out.println();
+
+
+                                                    indiceDeProducto = 0;
+                                                    for (String risito: risitoLista){
+                                                        indiceDeProducto++;
+                                                        System.out.println(indiceDeProducto + ". " + risito);
+                                                    }
+
+                                                    System.out.println();
+
+                                                    System.out.print("*-- ");
+                                                    opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+                                                    verificaSiEsNumero = false;
+                                                }
+                                            }
+
+
+                                            risitoLista.remove((numeroDeProductoParaActualizar - 1));
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*--------------------EL PRODUCTO FUE ELIMINADO CON EXITO--------------*");
+                                            System.out.println("*-- Su nueva lista es: ");
+                                            System.out.println();
+                                            System.out.println();
+
+
+                                            indiceDeProducto = 0;
+                                            for (String risitos: risitoLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto +  ". " + risitos);
+                                            }
+                                            System.out.println();
+                                            System.out.println();
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*-- Para salir del programa escribe: Regresar                          *");
+                                            System.out.println();
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            if (opcionesExistentesEnMenu.equals("REGRESAR")){
+                                                salirDeLosMenus = true;
+                                            }else {
+                                                salirDeLosMenus = false;
+                                            }
+                                        }
+
+                                        break eliminar;
+
+                                    case "2":
+
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus){
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               INGRESA EL NUMERO DEL RISITO A ELIMINAR               *");
+                                            System.out.println();
+
+
+                                            numeroDeProductoParaActualizar = 0;
+                                            indiceDeProducto = 0;
+                                            verificaSiEsNumero = false;
+
+                                            for (String jugos: jugosLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto + ". " + jugos);
+                                            }
+
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            while (!verificaSiEsNumero){
+
+                                                try {
+                                                    numeroDeProductoParaActualizar = Integer.parseInt(opcionesExistentesEnMenu);
+                                                    verificaSiEsNumero = true;
+                                                }catch (NumberFormatException e){
+
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*-- INGRESE EL NUMERO DE SU PRODUCTO PARA ELIMINAR");
+                                                    System.out.println();
+
+
+                                                    indiceDeProducto = 0;
+                                                    for (String jugos: jugosLista){
+                                                        indiceDeProducto++;
+                                                        System.out.println(indiceDeProducto + ". " + jugos);
+                                                    }
+
+                                                    System.out.println();
+
+                                                    System.out.print("*-- ");
+                                                    opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+                                                    verificaSiEsNumero = false;
+                                                }
+                                            }
+
+
+                                            jugosLista.remove((numeroDeProductoParaActualizar - 1));
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*--------------------EL PRODUCTO FUE ELIMINADO CON EXITO--------------*");
+                                            System.out.println("*-- Su nueva lista es: ");
+                                            System.out.println();
+                                            System.out.println();
+
+
+                                            indiceDeProducto = 0;
+                                            for (String jugos: jugosLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto +  ". " + jugos);
+                                            }
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*-- Para salir del programa escribe: Regresar                          *");
+                                            System.out.println();
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            if (opcionesExistentesEnMenu.equals("REGRESAR")){
+                                                salirDeLosMenus = true;
+                                            }else {
+                                                salirDeLosMenus = false;
+                                            }
+                                        }
+
+                                        break eliminar;
+
+                                    case "3":
+
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus){
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               INGRESA EL NUMERO DEL RISITO A ELIMINAR               *");
+                                            System.out.println();
+
+
+                                            numeroDeProductoParaActualizar = 0;
+                                            indiceDeProducto = 0;
+                                            verificaSiEsNumero = false;
+
+                                            for (String bebidas: bebidasLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto + ". " + bebidas);
+                                            }
+
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            while (!verificaSiEsNumero){
+
+                                                try {
+                                                    numeroDeProductoParaActualizar = Integer.parseInt(opcionesExistentesEnMenu);
+                                                    verificaSiEsNumero = true;
+                                                }catch (NumberFormatException e){
+
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*-- INGRESE EL NUMERO DE SU PRODUCTO PARA ELIMINAR");
+                                                    System.out.println();
+
+
+                                                    indiceDeProducto = 0;
+                                                    for (String bebidas: bebidasLista){
+                                                        indiceDeProducto++;
+                                                        System.out.println(indiceDeProducto + ". " + bebidas);
+                                                    }
+
+                                                    System.out.println();
+
+                                                    System.out.print("*-- ");
+                                                    opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+                                                    verificaSiEsNumero = false;
+                                                }
+                                            }
+
+
+                                            bebidasLista.remove((numeroDeProductoParaActualizar - 1));
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*--------------------EL PRODUCTO FUE ELIMINADO CON EXITO--------------*");
+                                            System.out.println("*-- Su nueva lista es: ");
+                                            System.out.println();
+                                            System.out.println();
+
+
+                                            indiceDeProducto = 0;
+                                            for (String bebidas:  bebidasLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto +  ". " + bebidas);
+                                            }
+
+
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*-- Para salir del programa escribe: Regresar                          *");
+                                            System.out.println();
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            if (opcionesExistentesEnMenu.equals("REGRESAR")){
+                                                salirDeLosMenus = true;
+                                            }else {
+                                                salirDeLosMenus = false;
+                                            }
+                                        }
+
+                                        break eliminar;
+
+                                    case "4":
+
+                                        salirDeLosMenus = false;
+                                        while (!salirDeLosMenus){
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               INGRESA EL NUMERO DEL RISITO A ELIMINAR               *");
+                                            System.out.println();
+
+
+                                            numeroDeProductoParaActualizar = 0;
+                                            indiceDeProducto = 0;
+                                            verificaSiEsNumero = false;
+
+                                            for (String sopas: sopasLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto + ". " + sopas);
+                                            }
+
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            while (!verificaSiEsNumero){
+
+                                                try {
+                                                    numeroDeProductoParaActualizar = Integer.parseInt(opcionesExistentesEnMenu);
+                                                    verificaSiEsNumero = true;
+                                                }catch (NumberFormatException e){
+
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                                    System.out.println("***********************************************************************");
+                                                    System.out.println("*-- INGRESE EL NUMERO DE SU PRODUCTO PARA ELIMINAR");
+                                                    System.out.println();
+
+
+                                                    indiceDeProducto = 0;
+                                                    for (String sopas: sopasLista){
+                                                        indiceDeProducto++;
+                                                        System.out.println(indiceDeProducto + ". " + sopas);
+                                                    }
+
+                                                    System.out.println();
+
+                                                    System.out.print("*-- ");
+                                                    opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+                                                    verificaSiEsNumero = false;
+                                                }
+                                            }
+
+
+                                            sopasLista.remove((numeroDeProductoParaActualizar - 1));
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*--------------------EL PRODUCTO FUE ELIMINADO CON EXITO--------------*");
+                                            System.out.println("*-- Su nueva lista es: ");
+                                            System.out.println();
+                                            System.out.println();
+
+
+                                            indiceDeProducto = 0;
+                                            for (String sopas: sopasLista){
+                                                indiceDeProducto++;
+                                                System.out.println(indiceDeProducto +  ". " + sopas);
+                                            }
+
+
+
+
+                                            System.out.println("***********************************************************************");
+                                            System.out.println("*               bienvenido a ¡INVENTARIOS GABO!                       *");
+                                            System.out.println("***********************************************************************");
+                                            System.out.println();
+                                            System.out.println();
+                                            System.out.println("*-- Para salir del programa escribe: Regresar                          *");
+                                            System.out.println();
+                                            System.out.print("*-- ");
+                                            opcionesExistentesEnMenu = entradaDeOpciones.next().toUpperCase();
+
+
+                                            if (opcionesExistentesEnMenu.equals("REGRESAR")){
+                                                salirDeLosMenus = true;
+                                            }else {
+                                                salirDeLosMenus = false;
+                                            }
+                                        }
+
+                                        break eliminar;
+                                }
+
+
+                        }
+
+                        if (opcionesExistentesEnMenu.equals("REGRESAR")) {
+                            salirDeLosMenus = true;
+
+                        }else{
+                            salirDeLosMenus = false;
+                        }
 
                         break casos;
                 }
@@ -788,16 +1206,16 @@ public class Main {
             }
 
             if (opcionesExistentesEnMenu.equals("SALIR")) {
-                opcionesExistentesEnMenu = "SALIR";
+                salirDeLosMenus = true;
             }else {
-                opcionesExistentesEnMenu = "SI";
+                salirDeLosMenus = false;
             }
 
 
 
 
 
-        }while (opcionesExistentesEnMenu.equals("SI"));
+        }while (!salirDeLosMenus);
 
 
     }
